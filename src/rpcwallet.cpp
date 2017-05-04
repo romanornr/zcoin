@@ -1130,14 +1130,13 @@ Value listtransactions2(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 3)
         throw runtime_error(
-                "listtransactions2 ( \"account\" count from includeWatchonly)\n"
-                        "\nReturns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.\n"
+                "listtransactions2 ( \"account\" count start )\n"
+                        "\nReturns up to 'count' most recent transactions skipping the first 'start' transactions for account 'account'.\n"
                         "\nArguments:\n"
                         "1. \"account\"    (string, optional) The account name. If not included, it will list all transactions for all accounts.\n"
                         "                                     If \"\" is set, it will list transactions for the default account.\n"
                         "2. count          (numeric, optional, default=10) The number of transactions to return\n"
-                        "3. from           (numeric, optional, default=0) The number of transactions to skip\n"
-                        "4. includeWatchonly (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')\n"
+                        "3. start          (numeric, optional, default=0) The number of transactions to skip\n"
                         "\nResult:\n"
                         "[\n"
                         "  {\n"
@@ -1175,7 +1174,6 @@ Value listtransactions2(const Array& params, bool fHelp)
                         "\nExamples:\n"
                         "\nList the most recent 10 transactions in the systems\n"
         );
-
     string strAccount = "*";
     if (params.size() > 0)
         strAccount = params[0].get_str();
@@ -1185,7 +1183,6 @@ Value listtransactions2(const Array& params, bool fHelp)
     int nStart = 0;
     if (params.size() > 2)
         nStart = params[2].get_int();
-
     if (nCount < 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Negative count");
     if (nStart < 0)
