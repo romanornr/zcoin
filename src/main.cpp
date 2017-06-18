@@ -935,6 +935,7 @@ bool CTransaction::CheckTransaction(CValidationState &state, uint256 hashTx, boo
                         if (pubCoinItem.value == pubCoin && pubCoinItem.denomination == denomination)
                         {
                             isAlreadyStored = true;
+                            break;
                         }
                     }
 
@@ -1023,7 +1024,7 @@ bool CTransaction::CheckTransaction(CValidationState &state, uint256 hashTx, boo
                                 unsigned int countPubcoin = 0;
                                 if(!passVerify){
                                     BOOST_FOREACH(const CZerocoinEntry& pubCoinItem, listPubCoin) {
-                                        //printf("denomination = %d, id = %d, pubcoinId = %d height = %d\n", pubCoinItem.denomination, pubCoinItem.id, pubcoinId, pubCoinItem.nHeight);
+                                        printf("denomination = %d, id = %d, pubcoinId = %d height = %d\n", pubCoinItem.denomination, pubCoinItem.id, pubcoinId, pubCoinItem.nHeight);
 
                                         if (pubCoinItem.denomination == libzerocoin::ZQ_LOVELACE && pubCoinItem.id == pubcoinId && pubCoinItem.nHeight != -1) {
                                             printf("## denomination = %d, id = %d, pubcoinId = %d height = %d\n", pubCoinItem.denomination, pubCoinItem.id, pubcoinId, pubCoinItem.nHeight);
