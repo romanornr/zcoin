@@ -39,7 +39,7 @@ private:
     WalletModel *model;
     bool fCapsLock;
 
-private slots:
+private Q_SLOTS:
     void textChanged();
     bool event(QEvent *event);
     bool eventFilter(QObject *object, QEvent *event);

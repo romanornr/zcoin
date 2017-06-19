@@ -56,7 +56,7 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
     /* Display elements init */
     QDir translations(":translations");
     ui->lang->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
-    foreach(const QString &langStr, translations.entryList())
+    Q_FOREACH(const QString &langStr, translations.entryList())
     {
         QLocale locale(langStr);
 
@@ -281,8 +281,8 @@ bool OptionsDialog::eventFilter(QObject *object, QEvent *event)
         if(object == ui->proxyIp)
         {
             CService addr;
-            /* Check proxyIp for a valid IPv4/IPv6 address and emit the proxyIpValid signal */
-            emit proxyIpValid(ui->proxyIp, LookupNumeric(ui->proxyIp->text().toStdString().c_str(), addr));
+            /* Check proxyIp for a valid IPv4/IPv6 address and Q_EMIT the proxyIpValid signal */
+            Q_EMIT proxyIpValid(ui->proxyIp, LookupNumeric(ui->proxyIp->text().toStdString().c_str(), addr));
         }
     }
     return QDialog::eventFilter(object, event);

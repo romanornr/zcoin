@@ -341,7 +341,7 @@ qt/qt_libbitcoinqt_a-addressbookpage.o: qt/addressbookpage.cpp \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h qt/optionsmodel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QAbstractListModel \
- qt/bitcoingui.h clientversion.h \
+ qt/bitcoingui.h config/bitcoin-config.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
@@ -1155,7 +1155,7 @@ qt/optionsmodel.h:
 
 qt/bitcoingui.h:
 
-clientversion.h:
+config/bitcoin-config.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel:
 

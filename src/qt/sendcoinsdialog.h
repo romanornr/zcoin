@@ -38,7 +38,7 @@ public:
     void pasteEntry(const SendCoinsRecipient &rv);
     bool handleURI(const QString &uri);
 
-public slots:
+public Q_SLOTS:
     void clear();
     void reject();
     void accept();
@@ -51,7 +51,7 @@ private:
     WalletModel *model;
     bool fNewRecipientAllowed;
 
-private slots:
+private Q_SLOTS:
     void on_sendButton_clicked();
     void removeEntry(SendCoinsEntry* entry);
     void updateDisplayUnit();

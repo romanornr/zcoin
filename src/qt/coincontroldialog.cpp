@@ -427,7 +427,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
     bool fDust = false;
     unsigned int nQuantityDust = 0;
     CTransaction txDummy;
-    foreach(const qint64 &amount, CoinControlDialog::payAmounts)
+    Q_FOREACH(const qint64 &amount, CoinControlDialog::payAmounts)
     {
         nPayAmount += amount;
         

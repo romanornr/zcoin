@@ -1,5 +1,5 @@
 qt/qt_libbitcoinqt_a-moc_bitcoingui.o: qt/moc_bitcoingui.cpp \
- /usr/include/stdc-predef.h qt/bitcoingui.h clientversion.h \
+ /usr/include/stdc-predef.h qt/bitcoingui.h config/bitcoin-config.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
@@ -296,7 +296,7 @@ qt/qt_libbitcoinqt_a-moc_bitcoingui.o: qt/moc_bitcoingui.cpp \
 
 qt/bitcoingui.h:
 
-clientversion.h:
+config/bitcoin-config.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel:
 

@@ -99,7 +99,7 @@ bool OptionsModel::Upgrade()
 
     QList<QString> intOptions;
     intOptions << "nDisplayUnit" << "nTransactionFee";
-    foreach(QString key, intOptions)
+    Q_FOREACH(QString key, intOptions)
     {
         int value = 0;
         if (walletdb.ReadSetting(key.toStdString(), value))
@@ -110,7 +110,7 @@ bool OptionsModel::Upgrade()
     }
     QList<QString> boolOptions;
     boolOptions << "bDisplayAddresses" << "fMinimizeToTray" << "fMinimizeOnClose" << "fUseProxy" << "fUseUPnP";
-    foreach(QString key, boolOptions)
+    Q_FOREACH(QString key, boolOptions)
     {
         bool value = false;
         if (walletdb.ReadSetting(key.toStdString(), value))
@@ -274,7 +274,7 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
         case Fee:
             nTransactionFee = value.toLongLong();
             settings.setValue("nTransactionFee", nTransactionFee);
-            emit transactionFeeChanged(nTransactionFee);
+            Q_EMIT transactionFeeChanged(nTransactionFee);
             break;
         case SpendZeroConfChange:
             if (settings.value("bSpendZeroConfChange") != value) {
@@ -285,7 +285,7 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
         case DisplayUnit:
             nDisplayUnit = value.toInt();
             settings.setValue("nDisplayUnit", nDisplayUnit);
-            emit displayUnitChanged(nDisplayUnit);
+            Q_EMIT displayUnitChanged(nDisplayUnit);
             break;
         case DisplayAddresses:
             bDisplayAddresses = value.toBool();
@@ -297,14 +297,14 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
         case CoinControlFeatures: {
             fCoinControlFeatures = value.toBool();
             settings.setValue("fCoinControlFeatures", fCoinControlFeatures);
-            emit coinControlFeaturesChanged(fCoinControlFeatures);
+            Q_EMIT coinControlFeaturesChanged(fCoinControlFeatures);
         }
         break;
         default:
             break;
         }
     }
-    emit dataChanged(index, index);
+    Q_EMIT dataChanged(index, index);
 
     return successful;
 }

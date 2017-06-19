@@ -217,7 +217,7 @@ bool WalletView::handleURI(const QString& strURI)
     if (sendCoinsPage->handleURI(strURI))
     {
         gotoSendCoinsPage();
-        emit showNormalIfMinimized();
+        Q_EMIT showNormalIfMinimized();
         return true;
     }
     else

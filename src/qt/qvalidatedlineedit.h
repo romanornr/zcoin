@@ -24,10 +24,10 @@ protected:
 private:
     bool valid;
 
-public slots:
+public Q_SLOTS:
     void setValid(bool valid);
 
-private slots:
+private Q_SLOTS:
     void markValid();
 };
 

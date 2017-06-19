@@ -275,7 +275,8 @@ qt/qt_libbitcoinqt_a-walletview.o: qt/walletview.cpp \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h qt/bitcoingui.h \
- clientversion.h /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+ config/bitcoin-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
@@ -1893,7 +1894,7 @@ qt/walletview.h:
 
 qt/bitcoingui.h:
 
-clientversion.h:
+config/bitcoin-config.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel:
 

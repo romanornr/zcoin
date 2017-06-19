@@ -2,38 +2,38 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINGUI_H
-#define BITCOINGUI_H
+#ifndef BITCOIN_QT_BITCOINGUI_H
+#define BITCOIN_QT_BITCOINGUI_H
 
+#if defined(HAVE_CONFIG_H)
+#include "config/bitcoin-config.h"
+#endif
+
+#include <QLabel>
 #include <QMainWindow>
-#include <QSystemTrayIcon>
 #include <QMap>
+#include <QMenu>
+#include <QPoint>
+#include <QSystemTrayIcon>
 
-class TransactionTableModel;
-class WalletFrame;
-class WalletView;
 class ClientModel;
-class WalletModel;
-class WalletStack;
-class TransactionView;
-class OverviewPage;
-class AddressBookPage;
-class SendCoinsDialog;
-class SignVerifyMessageDialog;
+class NetworkStyle;
 class Notificator;
+class OptionsModel;
+class PlatformStyle;
 class RPCConsole;
-
+class SendCoinsRecipient;
+class UnitDisplayStatusBarControl;
+class WalletFrame;
+class WalletModel;
+class HelpMessageDialog;
+class TransactionView;
 class CWallet;
 
 QT_BEGIN_NAMESPACE
-class QLabel;
-class QModelIndex;
-class QProgressBar;
-class QStackedWidget;
-class QUrl;
-class QListWidget;
-class QPushButton;
 class QAction;
+class QProgressBar;
+class QProgressDialog;
 QT_END_NAMESPACE
 
 /**
@@ -136,7 +136,7 @@ private:
     /** Enable or disable all wallet-related actions */
     void setWalletActionsEnabled(bool enabled);
 
-public slots:
+public Q_SLOTS:
     /** Set number of connections shown in the UI */
     void setNumConnections(int count);
     /** Set number of blocks shown in the UI */
@@ -169,7 +169,7 @@ public slots:
     /** Show incoming transaction notification for new transactions. */
     void incomingTransaction(const QString& date, int unit, qint64 amount, const QString& type, const QString& address);
 
-private slots:
+private Q_SLOTS:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
@@ -206,4 +206,4 @@ private slots:
     void detectShutdown();
 };
 
-#endif // BITCOINGUI_H
+#endif // BITCOIN_QT_BITCOINGUI_H

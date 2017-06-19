@@ -65,7 +65,7 @@ private:
     QString language;
     bool fCoinControlFeatures;
 
-signals:
+Q_SIGNALS:
     void displayUnitChanged(int unit);
     void transactionFeeChanged(qint64);
     void coinControlFeaturesChanged(bool);

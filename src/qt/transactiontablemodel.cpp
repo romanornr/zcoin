@@ -142,7 +142,7 @@ public:
                     {
                         parent->beginInsertRows(QModelIndex(), lowerIndex, lowerIndex+toInsert.size()-1);
                         int insert_idx = lowerIndex;
-                        foreach(const TransactionRecord &rec, toInsert)
+                        Q_FOREACH(const TransactionRecord &rec, toInsert)
                         {
                             cachedWallet.insert(insert_idx, rec);
                             insert_idx += 1;
@@ -259,8 +259,8 @@ void TransactionTableModel::updateConfirmations()
         // Invalidate status (number of confirmations) and (possibly) description
         //  for all rows. Qt is smart enough to only actually request the data for the
         //  visible rows.
-        emit dataChanged(index(0, Status), index(priv->size()-1, Status));
-        emit dataChanged(index(0, ToAddress), index(priv->size()-1, ToAddress));
+        Q_EMIT dataChanged(index(0, Status), index(priv->size()-1, Status));
+        Q_EMIT dataChanged(index(0, ToAddress), index(priv->size()-1, ToAddress));
     }
 }
 
@@ -631,6 +631,6 @@ QModelIndex TransactionTableModel::index(int row, int column, const QModelIndex 
 
 void TransactionTableModel::updateDisplayUnit()
 {
-    // emit dataChanged to update Amount column with the current unit
-    emit dataChanged(index(0, Amount), index(priv->size()-1, Amount));
+    // Q_EMIT dataChanged to update Amount column with the current unit
+    Q_EMIT dataChanged(index(0, Amount), index(priv->size()-1, Amount));
 }

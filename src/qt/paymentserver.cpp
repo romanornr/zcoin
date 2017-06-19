@@ -70,7 +70,7 @@ bool PaymentServer::ipcSendCommandLine()
         savedPaymentRequests.append(args[i]);
     }
 
-    foreach (const QString& arg, savedPaymentRequests)
+    Q_FOREACH(const QString& arg, savedPaymentRequests)
     {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
@@ -122,7 +122,7 @@ bool PaymentServer::eventFilter(QObject *object, QEvent *event)
             if (saveURIs) // Before main window is ready:
                 savedPaymentRequests.append(fileEvent->url().toString());
             else
-                emit receivedURI(fileEvent->url().toString());
+                Q_EMIT receivedURI(fileEvent->url().toString());
             return true;
         }
     }
@@ -132,8 +132,8 @@ bool PaymentServer::eventFilter(QObject *object, QEvent *event)
 void PaymentServer::uiReady()
 {
     saveURIs = false;
-    foreach (const QString& s, savedPaymentRequests)
-        emit receivedURI(s);
+    Q_FOREACH(const QString& s, savedPaymentRequests)
+        Q_EMIT receivedURI(s);
     savedPaymentRequests.clear();
 }
 
@@ -158,5 +158,5 @@ void PaymentServer::handleURIConnection()
     if (saveURIs)
         savedPaymentRequests.append(message);
     else
-        emit receivedURI(message);
+        Q_EMIT receivedURI(message);
 }

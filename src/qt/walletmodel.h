@@ -154,7 +154,7 @@ private:
     void unsubscribeFromCoreSignals();
     void checkBalanceChanged();
 
-signals:
+Q_SIGNALS:
     // Signal that balance in wallet changed
     void balanceChanged(qint64 balance, qint64 unconfirmedBalance, qint64 immatureBalance);
 
@@ -172,7 +172,7 @@ signals:
     // Asynchronous message notification
     void message(const QString &title, const QString &message, unsigned int style);
 
-public slots:
+public Q_SLOTS:
     /* Wallet status might have changed */
     void updateStatus();
     /* New transaction, or transaction changed status */
@@ -181,7 +181,7 @@ public slots:
     void updateAddressBook(const QString &address, const QString &label, bool isMine, int status);
     /* New zerocoin book entry */
     void updateAddressBook(const QString &pubCoin, const QString &isUsed, int status);
-    /* Current, immature or unconfirmed balance might have changed - emit 'balanceChanged' if so */
+    /* Current, immature or unconfirmed balance might have changed - Q_EMIT 'balanceChanged' if so */
     void pollBalanceChanged();
 };
 

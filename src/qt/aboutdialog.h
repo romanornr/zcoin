@@ -26,7 +26,7 @@ public:
 private:
     Ui::AboutDialog *ui;
 
-private slots:
+private Q_SLOTS:
     void on_buttonBox_accepted();
 };
 

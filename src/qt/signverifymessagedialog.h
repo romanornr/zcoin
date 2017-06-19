@@ -34,7 +34,7 @@ private:
     Ui::SignVerifyMessageDialog *ui;
     WalletModel *model;
 
-private slots:
+private Q_SLOTS:
     /* sign message */
     void on_addressBookButton_SM_clicked();
     void on_pasteButton_SM_clicked();

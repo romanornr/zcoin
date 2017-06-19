@@ -255,7 +255,8 @@ qt/qt_libbitcoinqt_a-bitcoingui.o: qt/bitcoingui.cpp \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h qt/bitcoingui.h \
- clientversion.h /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+ config/bitcoin-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
@@ -1949,7 +1950,7 @@ qt/qt_libbitcoinqt_a-bitcoingui.o: qt/bitcoingui.cpp \
 
 qt/bitcoingui.h:
 
-clientversion.h:
+config/bitcoin-config.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel:
 

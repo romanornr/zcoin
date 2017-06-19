@@ -66,7 +66,7 @@ private:
 
     TransactionView *transactionView;
 
-public slots:
+public Q_SLOTS:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
@@ -101,7 +101,7 @@ public slots:
 
     void setEncryptionStatus();
 
-signals:
+Q_SIGNALS:
     /** Signal that we want to show the main window */
     void showNormalIfMinimized();
 };

@@ -56,15 +56,15 @@ public:
 
     bool eventFilter(QObject *object, QEvent *event);
 
-signals:
+Q_SIGNALS:
     void receivedURI(QString);
 
-public slots:
+public Q_SLOTS:
     // Signal this when the main window's UI is ready
     // to display payment requests to the user
     void uiReady();
 
-private slots:
+private Q_SLOTS:
     void handleURIConnection();
 };
 
